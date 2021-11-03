@@ -21,6 +21,9 @@ jobs:
           draft: false
           prerelease: false
 
+      - name: Update mathalpha
+        run: tlmgr update mathalpha
+      
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
