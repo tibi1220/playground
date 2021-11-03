@@ -19,14 +19,12 @@ jobs:
         with:
           tag_name: Release-${{ steps.date.outputs.date }}
           draft: false
-          prerelease: false
-
-      - name: Update mathalpha
-        run: tlmgr update mathalpha
+          prerelease: false        
       
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
+          run: tlmgr update mathalpha
           root_file: main.tex
 
       - name: Upload document to Release
